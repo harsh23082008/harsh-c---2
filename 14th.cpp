@@ -4,7 +4,7 @@
 using namespace std;
 
 void simpleStopwatch() {
-    cout << "\n⏱️ Simple Stopwatch\n";
+    cout << "\n Simple Stopwatch\n";
     cout << "Press any key to START...\n";
     _getch(); // Wait for key press to start
 
@@ -14,7 +14,7 @@ void simpleStopwatch() {
     clock_t end = clock();
 
     double seconds = double(end - start) / CLOCKS_PER_SEC;
-    cout << "⏰ Elapsed Time: " << seconds << " seconds\n";
+    cout << " Elapsed Time: " << seconds << " seconds\n";
     cout << "Press any key to return to menu...\n";
     _getch();
 }
