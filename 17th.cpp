@@ -32,7 +32,7 @@ void saveParkingData() {
 
 void parkCar() {
     if (parkingLot.size() >= MAX_SLOTS) {
-        cout << "❌ Parking Full! No slots available.\n";
+        cout << " Parking Full! No slots available.\n";
         return;
     }
 
@@ -45,7 +45,7 @@ void parkCar() {
 
     parkingLot.push_back(car);
     saveParkingData();
-    cout << "✅ Car parked successfully!\n";
+    cout << " Car parked successfully!\n";
 }
 
 void removeCar() {
@@ -58,26 +58,26 @@ void removeCar() {
         if (it->carNumber == carNumber) {
             parkingLot.erase(it);
             saveParkingData();
-            cout << "✅ Car removed successfully!\n";
+            cout << " Car removed successfully!\n";
             found = true;
             break;
         }
     }
     if (!found) {
-        cout << "❌ Car not found in parking.\n";
+        cout << " Car not found in parking.\n";
     }
 }
 
 void viewParkingLot() {
-    cout << "\n🚗 Parked Cars (" << parkingLot.size() << "/" << MAX_SLOTS << " slots used):\n";
+    cout << "\nParked Cars (" << parkingLot.size() << "/" << MAX_SLOTS << " slots used):\n";
     if (parkingLot.empty()) {
-        cout << "🅿️ Parking is empty.\n";
+        cout << " Parking is empty.\n";
     } else {
         for (const auto &car : parkingLot) {
             cout << "Car Number: " << car.carNumber << ", Owner: " << car.ownerName << endl;
         }
     }
-    cout << "🟢 Available Slots: " << MAX_SLOTS - parkingLot.size() << endl;
+    cout << " Available Slots: " << MAX_SLOTS - parkingLot.size() << endl;
 }
 
 int main() {
@@ -86,16 +86,16 @@ int main() {
 
     do {
         cout << "\n==============================\n";
-        cout << "🚗 CAR PARKING MANAGEMENT SYSTEM\n";
+        cout << " CAR PARKING MANAGEMENT SYSTEM\n";
         cout << "==============================\n";
-        cout << "1️⃣ Park a Car\n";
-        cout << "2️⃣ Remove a Car\n";
-        cout << "3️⃣ View Parking Lot\n";
-        cout << "4️⃣ Exit\n";
+        cout << "1 Park a Car\n";
+        cout << "2 Remove a Car\n";
+        cout << "3 View Parking Lot\n";
+        cout << "4 Exit\n";
         cout << "Choose an option (1-4): ";
 
         if (!(cin >> choice)) {
-            cout << "❌ Invalid input! Numbers only.\n";
+            cout << " Invalid input! Numbers only.\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
@@ -105,8 +105,8 @@ int main() {
             case 1: parkCar(); break;
             case 2: removeCar(); break;
             case 3: viewParkingLot(); break;
-            case 4: cout << "👋 Exiting Car Parking System...\n"; break;
-            default: cout << "⚠️ Invalid option. Please try again.\n";
+            case 4: cout << " Exiting Car Parking System...\n"; break;
+            default: cout << "⚠ Invalid option. Please try again.\n";
         }
     } while (choice != 4);
 
