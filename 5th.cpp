@@ -21,11 +21,11 @@ public:
 
         cout << "Set a 4-digit PIN: ";
         while (!(cin >> pin) || pin < 1000 || pin > 9999) {
-            cout << "❌ Invalid PIN! Enter a 4-digit number: ";
+            cout << " Invalid PIN! Enter a 4-digit number: ";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
-        cout << "🎉 Account created successfully for " << name << "!\n";
+        cout << " Account created successfully for " << name << "!\n";
     }
 
     bool verifyPIN() {
@@ -34,20 +34,20 @@ public:
         if (!(cin >> enteredPin)) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "❌ Invalid input! Numbers only.\n";
+            cout << " Invalid input! Numbers only.\n";
             return false;
         }
         if (enteredPin == pin) {
             return true;
         } else {
-            cout << "❌ Incorrect PIN!\n";
+            cout << " Incorrect PIN!\n";
             return false;
         }
     }
 
     void checkBalance() {
         if (verifyPIN()) {
-            cout << "\n💰 Current Balance: ₹" << balance << endl;
+            cout << "\n Current Balance: ₹" << balance << endl;
         }
     }
 
@@ -56,12 +56,12 @@ public:
             double amount;
             cout << "Enter amount to deposit: ₹";
             while (!(cin >> amount) || amount <= 0) {
-                cout << "❌ Invalid amount! Enter positive numbers: ₹";
+                cout << " Invalid amount! Enter positive numbers: ₹";
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
             balance += amount;
-            cout << "✅ ₹" << amount << " deposited successfully!\n";
+            cout << " ₹" << amount << " deposited successfully!\n";
         }
     }
 
@@ -70,15 +70,15 @@ public:
             double amount;
             cout << "Enter amount to withdraw: ₹";
             while (!(cin >> amount) || amount <= 0) {
-                cout << "❌ Invalid amount! Enter positive numbers: ₹";
+                cout << " Invalid amount! Enter positive numbers: ₹";
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
             if (amount <= balance) {
                 balance -= amount;
-                cout << "✅ ₹" << amount << " withdrawn successfully!\n";
+                cout << " ₹" << amount << " withdrawn successfully!\n";
             } else {
-                cout << "❌ Insufficient balance!\n";
+                cout << " Insufficient balance!\n";
             }
         }
     }
@@ -91,7 +91,7 @@ int main() {
     user.createAccount();
 
     do {
-        cout << "\n===== 🏦 Mini ATM Menu =====\n";
+        cout << "\n=====  Mini ATM Menu =====\n";
         cout << "1 Check Balance\n";
         cout << "2 Deposit Money\n";
         cout << "3 Withdraw Money\n";
@@ -99,7 +99,7 @@ int main() {
         cout << "Choose an option (1-4): ";
 
         if (!(cin >> choice)) {
-            cout << "❌ Invalid input! Numbers only.\n";
+            cout << " Invalid input! Numbers only.\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue; // Skip to next loop iteration
@@ -116,10 +116,10 @@ int main() {
                 user.withdrawMoney();
                 break;
             case 4:
-                cout << "👋 Thank you for using Mini ATM!\n";
+                cout << " Thank you for using Mini ATM!\n";
                 break;
             default:
-                cout << "⚠️ Invalid choice! Please enter 1-4.\n";
+                cout << " Invalid choice! Please enter 1-4.\n";
         }
 
     } while (choice != 4);
