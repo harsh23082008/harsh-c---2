@@ -9,7 +9,7 @@ int main() {
     cout << "🖩 Simple Calculator\n";
     cout << "Enter expression (e.g., 5 + 2): ";
     while (!(cin >> num1 >> op >> num2)) {
-        cout << "❌ Invalid input! Try again.\n";
+        cout << " Invalid input! Try again.\n";
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
@@ -22,9 +22,9 @@ int main() {
             if (num2 != 0)
                 cout << "Result: " << num1 / num2 << endl;
             else
-                cout << "❌ Cannot divide by zero!\n";
+                cout << " Cannot divide by zero!\n";
             break;
-        default: cout << "❌ Invalid operator!\n";
+        default: cout << " Invalid operator!\n";
     }
     return 0;
 }
