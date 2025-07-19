@@ -5,7 +5,7 @@ int main() {
     float temp;
     char choice;
 
-    cout << "🌡️ Temperature Converter\n";
+    cout << " Temperature Converter\n";
     cout << "Convert (C)elsius to (F)ahrenheit or (F) to (C)? ";
     cin >> choice;
 
@@ -18,7 +18,7 @@ int main() {
         cin >> temp;
         cout << "In Celsius: " << (temp - 32) * 5/9 << endl;
     } else {
-        cout << "❌ Invalid choice!\n";
+        cout << " Invalid choice!\n";
     }
 
     return 0;
