@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     float weight, height, bmi;
 
-    cout << "⚖️ BMI Calculator\n";
+    cout << " BMI Calculator\n";
     cout << "Enter weight (kg): ";
     cin >> weight;
     cout << "Enter height (m): ";

@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     int score = 0, answer;
 
-    cout << "📝 Simple Quiz\n";
+    cout << " Simple Quiz\n";
 
     cout << "1. What is the capital of India?\n";
     cout << "1) Mumbai  2) Delhi  3) Kolkata  4) Chennai\n";
